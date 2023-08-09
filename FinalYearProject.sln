@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinalYearProject.DataAccess
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinalYearProject.Utilities", "FinalYearProject.Utilities\FinalYearProject.Utilities.csproj", "{C1FB6D2E-2A84-48B5-B88B-9C3F83A4F099}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalYearProject.Models", "FinalYearProject.Models\FinalYearProject.Models.csproj", "{869F0F7E-160D-48A9-9674-8658FDE1014E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinalYearProject.Models", "FinalYearProject.Models\FinalYearProject.Models.csproj", "{869F0F7E-160D-48A9-9674-8658FDE1014E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

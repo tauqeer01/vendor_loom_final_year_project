@@ -16,13 +16,13 @@ namespace FinalYearProject.Models
 		public string? ProductDescription { get; set; }
 		public decimal ProductMRP { get; set; }
 		public decimal FinalPrice { get; set; }
-		public string ProductImagePath { get; set; }
 		public DateTime CreateAt { get; set; }= DateTime.Now;
 		public DateTime UpdatedAt { get; set; }=DateTime.Now;
 		public int CategoryId { get; set; }
 
 		[ForeignKey(nameof(CategoryId))]
 		public Category Category { get; set; }
+        public List<ProductImage> ProductImages { get; set; }  // navigation property
 
-	}
+    }
 }

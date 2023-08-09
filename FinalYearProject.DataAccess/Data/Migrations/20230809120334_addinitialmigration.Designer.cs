@@ -4,6 +4,7 @@ using FinalYearProject.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FinalYearProject.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230809120334_addinitialmigration")]
+    partial class addinitialmigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -149,9 +152,6 @@ namespace FinalYearProject.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("Regdate")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
@@ -191,29 +191,6 @@ namespace FinalYearProject.DataAccess.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("Members", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "885bae90-2ee1-4c18-949f-9ee6e88f9082",
-                            AccessFailedCount = 0,
-                            Balance = 0m,
-                            ConcurrencyStamp = "cbe81922-55b8-4252-aa14-ac1d607ede39",
-                            EarnedPoint = 0,
-                            Email = "admin@vendorloom.com",
-                            EmailConfirmed = true,
-                            FullName = "Super Admin",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "ADMIN@VENDORLOOM.COM",
-                            NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEI26v+E1ZptUNPia2sfi1udUz3tiaMKcaYNs7sniTxtypvCOmCSg1T7U4p046eixGw==",
-                            PhoneNumberConfirmed = true,
-                            RefCode = "n/a",
-                            Regdate = new DateTime(2023, 8, 9, 21, 44, 39, 822, DateTimeKind.Local).AddTicks(2659),
-                            SecurityStamp = "39b6a992-b137-4d08-ab25-cbd08642bbcb",
-                            TwoFactorEnabled = false,
-                            UserName = "Admin"
-                        });
                 });
 
             modelBuilder.Entity("FinalYearProject.Models.BannerSlide", b =>
@@ -631,14 +608,6 @@ namespace FinalYearProject.DataAccess.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("Roles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "0fd415ce-ca2c-400e-974a-bfff5dd47180",
-                            Name = "Admin",
-                            NormalizedName = "ADMIN"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -726,13 +695,6 @@ namespace FinalYearProject.DataAccess.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("UserRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = "885bae90-2ee1-4c18-949f-9ee6e88f9082",
-                            RoleId = "0fd415ce-ca2c-400e-974a-bfff5dd47180"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>

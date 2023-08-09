@@ -14,10 +14,10 @@ namespace FinalYearProject.Models
 		[Key]
 		public int CategoryId { get; set; }
 		public  string CategoryName { get; set; }	
-		public  string? CategoryImage { get; set; }
-		public string VendorId { get; set; }
+		public  string? ImageUrl { get; set; }
+		public string UserId { get; set; }
 
-		[ForeignKey(nameof(VendorId))]
+		[ForeignKey(nameof(UserId))]
 		public AppUsers AppUsers { get; set; }
 		public DateTime CreateAt { get; set; }
 	}

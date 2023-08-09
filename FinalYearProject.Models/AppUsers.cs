@@ -13,6 +13,7 @@ namespace FinalYearProject.Models
 	  public string RefCode { get; set; }
       public string? FullName { get; set; }
 	  public string? StoreName { get; set; }
+	  public DateTime Regdate { get; set; }= DateTime.Now;
 	  public string? StreetAddress { get; set; }
 	  public string? StoreAddress { get; set; }
       public string? City { get; set;}
